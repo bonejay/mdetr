@@ -65,9 +65,9 @@ def mdetr_resnet101(pretrained=False, return_postprocessor=False):
     model = _make_detr("resnet101")
     if pretrained:
         checkpoint = torch.hub.load_state_dict_from_url(
-            url="https://zenodo.org/record/4721981/files/pretrained_resnet101_checkpoint.pth",
+            url="https://zenodo.org/record/4721981/files/lvis10_checkpoint.pth",
             map_location="cpu",
-            check_hash=True,
+            check_hash=False,
         )
         model.load_state_dict(checkpoint["model"])
     if return_postprocessor:
